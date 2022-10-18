@@ -82,3 +82,11 @@ dentro de la terminal del cliente hacemos:
 ~~~ 
 sudo apt intall net-tools
 ~~~
+
+--- 
+
+una vez hacemos el docker-compose up ya tenemos tanto el cliente como el servidor funcionando, y para comprobar que funciona hacemos 
+~~~
+docker exec -it asir-cliente sh
+~~~
+y dentro hacemos un ping a nuestro servidor dns
