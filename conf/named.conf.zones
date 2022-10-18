@@ -1,0 +1,5 @@
+zone "asircastelao.com." {
+        type primary;
+        file "/var/lib/bind/db.asircastelao.com";
+        notify explicit;
+};

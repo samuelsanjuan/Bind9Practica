@@ -1,0 +1,27 @@
+services:
+  bind9:
+    container_name: asir_bind9
+    image: internetsystemsconsortium/bind9:9.18
+    volumes:
+      - /home/asir2a/Escritorio/ServiciosDeRed/trimestre1/PracticaDNS/conf:/etc/bind
+      - /home/asir2a/Escritorio/ServiciosDeRed/trimestre1/PracticaDNS/zonas:/var/lib/bind
+    networks:
+      bind9_subnet:
+        ipv4_address: 192.168.0.2
+
+  asir_cliente:
+    container_name: asir_cliente
+    image: alpine
+
+    networks:
+      - bind9_subnet
+    
+    stdin_open: true
+    tty: true
+
+    dns:
+      - 192.168.0.2
+
+networks:
+  bind9_subnet:
+    external: true
